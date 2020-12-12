@@ -13,31 +13,32 @@ namespace ezHotel
 {
     static class Program
     {
+        public static string DbName = "mainDB.db";
+        public static string ConnectionString = "Data Source=" + DbName + ";Version=3;";
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
         static void Main()
         {
-            if (!File.Exists("mainDB.db"))
-                SQLiteConnection.CreateFile("mainDB.db");
-
-            try
+            if (!File.Exists(DbName))
             {
-                var m_dbConn = new SQLiteConnection("Data Source=" + "mainDB.db" + ";Version=3;");
-                var m_sqlCmd = new SQLiteCommand();
-                m_dbConn.Open();
+                SQLiteConnection.CreateFile(DbName);
 
-                m_sqlCmd.Connection = m_dbConn;
-
-                m_sqlCmd.CommandText = "CREATE TABLE IF NOT EXISTS Catalog (id INTEGER PRIMARY KEY AUTOINCREMENT, author TEXT, book TEXT)";
-                m_sqlCmd.ExecuteNonQuery();
+                using (var connect = new SQLiteConnection(ConnectionString))
+                {
+                    var command = new SQLiteCommand(QueryHolder.InitQuery, connect);
+                    connect.Open();
+                    command.ExecuteNonQuery();
+                    connect.Close();
+                }
 
             }
-            catch (SQLiteException ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
+
+
+
+
+
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
