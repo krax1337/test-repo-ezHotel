@@ -19,33 +19,25 @@ namespace ezHotel
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (e.CloseReason != CloseReason.UserClosing) return;
-            if (MessageBox.Show("Are you sure want to exit?",
-                "ezHotel",
-                MessageBoxButtons.OKCancel,
-                MessageBoxIcon.Information) == DialogResult.OK)
-                Environment.Exit(1);
-            else
+            if (MessageBox.Show("Are you sure you want to close?", "Infomate", MessageBoxButtons.YesNo) == DialogResult.No)
+            {
                 e.Cancel = true;
+                Application.Exit();
+            }
         }
 
         private void manageClientsButton_Click(object sender, EventArgs e)
         {
+            // Possible memory leak with hiding main tweak
+            //Show(ManageClientsForm());
             ManageClientsForm manageClientsForm = new ManageClientsForm();
             manageClientsForm.Show();
-            this.Hide();
+            //Hide();
         }
 
-        //private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
-        //{
-        //    if (e.CloseReason != CloseReason.UserClosing) return;
-        //    if (MessageBox.Show("Are you sure want to exit?",
-        //        "ezHotel",
-        //        MessageBoxButtons.OKCancel,
-        //        MessageBoxIcon.Information) == DialogResult.OK)
-        //        Environment.Exit(1);
-        //    else
-        //        e.Cancel = true;
-        //}
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
