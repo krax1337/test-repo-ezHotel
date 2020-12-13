@@ -12,15 +12,17 @@ namespace ezHotel
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Phone { get; set; }
+        public string Email { get; set; }
         public string Country { get; set; }
         public string PassportNumber { get; set; }
 
-        public Client(int clientId, string firstName, string lastName, string phone, string country, string passportNumber)
+        public Client(int clientId, string firstName, string lastName, string phone, string email, string country, string passportNumber)
         {
             ClientId = clientId;
             FirstName = firstName;
             LastName = lastName;
             Phone = phone;
+            Email = email;
             Country = country;
             PassportNumber = passportNumber;
         }
