@@ -39,5 +39,10 @@ namespace ezHotel
         {
 
         }
+
+        private void manageReservationsButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

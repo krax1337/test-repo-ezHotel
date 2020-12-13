@@ -22,6 +22,7 @@ namespace ezHotel
 
         CREATE TABLE RoomType (
 	        room_type_id	INTEGER NOT NULL UNIQUE,
+	        name TEXT NOT NULL,
 	        number_of_beds	INTEGER NOT NULL,
 	        price	INTEGER NOT NULL,
 	        CONSTRAINT pk_RoomType PRIMARY KEY(room_type_id AUTOINCREMENT)
@@ -31,17 +32,18 @@ namespace ezHotel
 	        room_id	INTEGER NOT NULL UNIQUE,
 	        floor	INTEGER NOT NULL,
 	        room_type_id	INTEGER NOT NULL,
+	        occupied INTEGER DEFAULT 0,
 	        CONSTRAINT pk_Room PRIMARY KEY(room_id AUTOINCREMENT),
 	        CONSTRAINT fk_RoomType FOREIGN KEY(room_type_id) REFERENCES RoomType(room_type_id)
         );
 
         CREATE TABLE Reservation (
 	        reservation_id	INTEGER NOT NULL UNIQUE,
-            room_id	INTEGER NOT NULL,
-            client_id	INTEGER NOT NULL,
-            start_date TEXT NOT NULL,
-            end_date TEXT,
-            occupied TEXT,
+	        room_id	INTEGER NOT NULL,
+	        client_id	INTEGER NOT NULL,
+	        start_date TEXT NOT NULL,
+	        end_date TEXT,
+	        current_status TEXT,
 	        amount INTEGER,
 	        CONSTRAINT pk_Reservation PRIMARY KEY(reservation_id AUTOINCREMENT),
 	        CONSTRAINT fk_Room FOREIGN KEY(room_id) REFERENCES Room(room_id)
@@ -78,6 +80,15 @@ namespace ezHotel
         insert into Client (first_name, last_name, phone, email, country, passport_number) values ('Bev', 'Adlard', '958-666-9072', 'badlardr@amazon.co.jp', 'Yemen', '511336858-X');
         insert into Client (first_name, last_name, phone, email, country, passport_number) values ('Allianora', 'Avramovsky', '861-416-9105', 'aavramovskys@usatoday.com', 'Russia', '252402411-3');
         insert into Client (first_name, last_name, phone, email, country, passport_number) values ('Kyle', 'Smallacombe', '967-764-7440', 'ksmallacombet@nytimes.com', 'Indonesia', '950230923-5');
+
+        insert into RoomType values(null, 'Standard singe', 1, 1000);
+        insert into RoomType values(null, 'Standard double', 2, 1500);
+        insert into RoomType values(null, 'Luxe singe', 1, 2000);
+        insert into RoomType values(null, 'Luxe double', 2, 2500);
+        insert into RoomType values(null, 'Family', 4, 3000);
+        insert into RoomType values(null, 'President', 6, 6000);
+
+
         ";
     }
 }

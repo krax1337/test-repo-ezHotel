@@ -51,6 +51,7 @@
             this.manageReservationsButton.TabIndex = 1;
             this.manageReservationsButton.Text = "Manager reservations";
             this.manageReservationsButton.UseVisualStyleBackColor = true;
+            this.manageReservationsButton.Click += new System.EventHandler(this.manageReservationsButton_Click);
             // 
             // manageRoomsButton
             // 
