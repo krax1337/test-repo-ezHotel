@@ -61,6 +61,7 @@
             this.manageRoomsButton.TabIndex = 2;
             this.manageRoomsButton.Text = "Manage rooms";
             this.manageRoomsButton.UseVisualStyleBackColor = true;
+            this.manageRoomsButton.Click += new System.EventHandler(this.manageRoomsButton_Click);
             // 
             // MainForm
             // 

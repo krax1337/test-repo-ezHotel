@@ -60,30 +60,6 @@ namespace ezHotel
             GenerateClientTable();
         }
 
-        private void ManageClientsForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-
-        }
-
-        private void dataGridClient_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                var selectedRow = dataGridClient.SelectedRows[0].DataBoundItem as Client;
-                firstNameText.Text = selectedRow.FirstName;
-                lastNameText.Text = selectedRow.LastName;
-                phoneText.Text = selectedRow.Phone;
-                emailText.Text = selectedRow.Email;
-                countryText.Text = selectedRow.Country;
-                passportNumberText.Text = selectedRow.PassportNumber;
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show($"Error occured: {exception.Message} - {exception.Source}");
-                throw;
-            }
-        }
-
         private void deleteButton_Click(object sender, EventArgs e)
         {
             try
@@ -146,6 +122,25 @@ namespace ezHotel
         private void tableUpdateButton_Click(object sender, EventArgs e)
         {
             GenerateClientTable();
+        }
+
+        private void dataGridClient_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                var selectedRow = dataGridClient.SelectedRows[0].DataBoundItem as Client;
+                firstNameText.Text = selectedRow.FirstName;
+                lastNameText.Text = selectedRow.LastName;
+                phoneText.Text = selectedRow.Phone;
+                emailText.Text = selectedRow.Email;
+                countryText.Text = selectedRow.Country;
+                passportNumberText.Text = selectedRow.PassportNumber;
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show($"Error occured: {exception.Message} - {exception.Source}");
+                throw;
+            }
         }
     }
 }

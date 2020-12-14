@@ -44,5 +44,11 @@ namespace ezHotel
         {
 
         }
+
+        private void manageRoomsButton_Click(object sender, EventArgs e)
+        {
+            ManageRoomsForm manageRoomsForm = new ManageRoomsForm();
+            manageRoomsForm.Show();
+        }
     }
 }

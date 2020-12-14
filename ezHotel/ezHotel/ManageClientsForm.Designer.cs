@@ -57,7 +57,7 @@
             this.dataGridClient.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridClient.Size = new System.Drawing.Size(782, 321);
             this.dataGridClient.TabIndex = 0;
-            this.dataGridClient.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridClient_CellContentClick);
+            this.dataGridClient.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridClient_CellDoubleClick);
             // 
             // firstNameText
             // 
@@ -181,7 +181,7 @@
             this.createButton.Name = "createButton";
             this.createButton.Size = new System.Drawing.Size(89, 20);
             this.createButton.TabIndex = 15;
-            this.createButton.Text = "Create form";
+            this.createButton.Text = "Create";
             this.createButton.UseVisualStyleBackColor = true;
             this.createButton.Click += new System.EventHandler(this.createButton_Click);
             // 
@@ -191,7 +191,7 @@
             this.tableUpdateButton.Name = "tableUpdateButton";
             this.tableUpdateButton.Size = new System.Drawing.Size(89, 20);
             this.tableUpdateButton.TabIndex = 16;
-            this.tableUpdateButton.Text = "Update table";
+            this.tableUpdateButton.Text = "Refresh";
             this.tableUpdateButton.UseVisualStyleBackColor = true;
             this.tableUpdateButton.Click += new System.EventHandler(this.tableUpdateButton_Click);
             // 
@@ -219,7 +219,6 @@
             this.Controls.Add(this.dataGridClient);
             this.Name = "ManageClientsForm";
             this.Text = "v";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ManageClientsForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridClient)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -81,12 +81,21 @@ namespace ezHotel
         insert into Client (first_name, last_name, phone, email, country, passport_number) values ('Allianora', 'Avramovsky', '861-416-9105', 'aavramovskys@usatoday.com', 'Russia', '252402411-3');
         insert into Client (first_name, last_name, phone, email, country, passport_number) values ('Kyle', 'Smallacombe', '967-764-7440', 'ksmallacombet@nytimes.com', 'Indonesia', '950230923-5');
 
-        insert into RoomType values(null, 'Standard singe', 1, 1000);
+        insert into RoomType values(null, 'Standard single', 1, 1000);
         insert into RoomType values(null, 'Standard double', 2, 1500);
-        insert into RoomType values(null, 'Luxe singe', 1, 2000);
+        insert into RoomType values(null, 'Luxe single', 1, 2000);
         insert into RoomType values(null, 'Luxe double', 2, 2500);
         insert into RoomType values(null, 'Family', 4, 3000);
         insert into RoomType values(null, 'President', 6, 6000);
+
+        insert into Room values(null, 1, 1, 0);
+        insert into Room values(null, 1, 1, 0);
+        insert into Room values(null, 2, 2, 0);
+        insert into Room values(null, 2, 2, 0);
+        insert into Room values(null, 3, 3, 0);
+        insert into Room values(null, 3, 4, 0);
+        insert into Room values(null, 4, 5, 0);
+        insert into Room values(null, 5, 6, 0);
 
 
         ";
