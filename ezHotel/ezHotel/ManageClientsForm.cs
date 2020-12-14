@@ -30,10 +30,10 @@ namespace ezHotel
                 //sqlData.Fill(dataTable);
                 //dataGridView1.DataSource = dataTable;
 
-                if (sqlReader.HasRows) 
+                if (sqlReader.HasRows)
                 {
 
-                    while (sqlReader.Read()) 
+                    while (sqlReader.Read())
                     {
                         var clientId = Convert.ToInt32(sqlReader["client_id"]);
                         var firstName = sqlReader["first_name"].ToString();
@@ -62,51 +62,59 @@ namespace ezHotel
 
         private void deleteButton_Click(object sender, EventArgs e)
         {
-            try
+            if (dataGridClient.RowCount > 0)
             {
-                var selectedRow = dataGridClient.SelectedRows[0].DataBoundItem as Client;
-                var clientPk = selectedRow.ClientId;
-
-                using (var connect = new SQLiteConnection(Program.ConnectionString))
+                try
                 {
-                    var command = new SQLiteCommand($"DELETE FROM Client WHERE client_id = {clientPk}", connect);
-                    connect.Open();
-                    command.ExecuteNonQuery();
-                    connect.Close();
-                }
+                    var selectedRow = dataGridClient.SelectedRows[0].DataBoundItem as Client;
+                    var clientPk = selectedRow.ClientId;
 
-                GenerateClientTable();
+                    using (var connect = new SQLiteConnection(Program.ConnectionString))
+                    {
+                        var command = new SQLiteCommand($"DELETE FROM Client WHERE client_id = {clientPk}", connect);
+                        connect.Open();
+                        command.ExecuteNonQuery();
+                        connect.Close();
+                    }
+
+                    GenerateClientTable();
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show($"Error occured: {exception.Message} - {exception.Source}");
+                    throw;
+                }
             }
-            catch (Exception exception)
-            {
-                MessageBox.Show($"Error occured: {exception.Message} - {exception.Source}");
-                throw;
-            }
+
 
         }
 
         private void updateButton_Click(object sender, EventArgs e)
         {
-            try
+            if (dataGridClient.RowCount > 0)
             {
-                var selectedRow = dataGridClient.SelectedRows[0].DataBoundItem as Client;
-                var clientPk = selectedRow.ClientId;
-
-                using (var connect = new SQLiteConnection(Program.ConnectionString))
+                try
                 {
-                    var command = new SQLiteCommand($"UPDATE Client SET first_name = \"{firstNameText.Text}\", last_name = \"{lastNameText.Text}\", phone = \"{phoneText.Text}\", email = \"{emailText.Text}\", country = \"{countryText.Text}\", passport_number = \"{passportNumberText.Text}\" WHERE client_id = {clientPk}", connect);
-                    connect.Open();
-                    command.ExecuteNonQuery();
-                    connect.Close();
-                }
+                    var selectedRow = dataGridClient.SelectedRows[0].DataBoundItem as Client;
+                    var clientPk = selectedRow.ClientId;
 
-                GenerateClientTable();
+                    using (var connect = new SQLiteConnection(Program.ConnectionString))
+                    {
+                        var command = new SQLiteCommand($"UPDATE Client SET first_name = \"{firstNameText.Text}\", last_name = \"{lastNameText.Text}\", phone = \"{phoneText.Text}\", email = \"{emailText.Text}\", country = \"{countryText.Text}\", passport_number = \"{passportNumberText.Text}\" WHERE client_id = {clientPk}", connect);
+                        connect.Open();
+                        command.ExecuteNonQuery();
+                        connect.Close();
+                    }
+
+                    GenerateClientTable();
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show($"Error occured: {exception.Message} - {exception.Source}");
+                    throw;
+                }
             }
-            catch (Exception exception)
-            {
-                MessageBox.Show($"Error occured: {exception.Message} - {exception.Source}");
-                throw;
-            }
+
         }
 
         private void createButton_Click(object sender, EventArgs e)

@@ -73,26 +73,31 @@ namespace ezHotel
 
         private void deleteButton_Click(object sender, EventArgs e)
         {
-            try
+            if (dataGridRoom.RowCount > 0)
             {
-                var selectedRow = dataGridRoom.SelectedRows[0].DataBoundItem as Room;
-                var roomPk = selectedRow.RoomId;
-
-                using (var connect = new SQLiteConnection(Program.ConnectionString))
+                try
                 {
-                    var command = new SQLiteCommand($"DELETE FROM Room WHERE room_id = {roomPk}", connect);
-                    connect.Open();
-                    command.ExecuteNonQuery();
-                    connect.Close();
-                }
+                    var selectedRow = dataGridRoom.SelectedRows[0].DataBoundItem as Room;
+                    var roomPk = selectedRow.RoomId;
 
-                GenerateRoomTable();
+                    using (var connect = new SQLiteConnection(Program.ConnectionString))
+                    {
+                        var command = new SQLiteCommand($"DELETE FROM Room WHERE room_id = {roomPk}", connect);
+                        connect.Open();
+                        command.ExecuteNonQuery();
+                        connect.Close();
+                    }
+
+                    GenerateRoomTable();
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show($"Error occured: {exception.Message} - {exception.Source}");
+                    throw;
+                }
+                
             }
-            catch (Exception exception)
-            {
-                MessageBox.Show($"Error occured: {exception.Message} - {exception.Source}");
-                throw;
-            }
+
         }
 
         private void updateButton_Click(object sender, EventArgs e)

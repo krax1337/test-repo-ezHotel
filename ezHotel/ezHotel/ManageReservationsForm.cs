@@ -46,7 +46,7 @@ namespace ezHotel
                         var currentStatus = sqlReader["current_status"].ToString();
                         var amount = Convert.ToInt32(sqlReader["amount"]);
 
-                        var reservation = new Reservation(reservationId, roomId, roomType, clientId, clientFullName, 
+                        var reservation = new Reservation(reservationId, roomId, roomType, clientId, clientFullName,
                             startDate, endDate, currentStatus, amount);
                         reservations.Add(reservation);
                     }
@@ -90,52 +90,69 @@ namespace ezHotel
 
         private void deleteButton_Click(object sender, EventArgs e)
         {
-            try
+            if (dataGridReservation.RowCount > 0)
             {
-                var selectedRow = dataGridReservation.SelectedRows[0].DataBoundItem as Reservation;
-
-
-                using (var connect = new SQLiteConnection(Program.ConnectionString))
+                try
                 {
-                    var command = new SQLiteCommand($@"DELETE FROM Reservation WHERE reservation_id = {selectedRow.ReservationId};
-                                                    UPDATE Room SET occupied = 0 WHERE room_id = {selectedRow.RoomId}", connect);
-                    connect.Open();
-                    command.ExecuteNonQuery();
-                    connect.Close();
-                }
+                    var selectedRow = dataGridReservation.SelectedRows[0].DataBoundItem as Reservation;
 
-                GenerateReservationTable();
+
+                    using (var connect = new SQLiteConnection(Program.ConnectionString))
+                    {
+                        var command = new SQLiteCommand($@"DELETE FROM Reservation WHERE reservation_id = {selectedRow.ReservationId};
+                                                    UPDATE Room SET occupied = 0 WHERE room_id = {selectedRow.RoomId}", connect);
+                        connect.Open();
+                        command.ExecuteNonQuery();
+                        connect.Close();
+                    }
+
+                    GenerateReservationTable();
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show($"Error occured: {exception.Message} - {exception.Source}");
+                    throw;
+                }
             }
-            catch (Exception exception)
-            {
-                MessageBox.Show($"Error occured: {exception.Message} - {exception.Source}");
-                throw;
-            }
+
         }
 
         private void finishButton_Click(object sender, EventArgs e)
         {
-            try
+            if (dataGridReservation.RowCount > 0)
             {
-                var selectedRow = dataGridReservation.SelectedRows[0].DataBoundItem as Reservation;
-
-                using (var connect = new SQLiteConnection(Program.ConnectionString))
+                try
                 {
-                    var command = new SQLiteCommand($@"UPDATE Reservation SET current_status = 'Finished' WHERE reservation_id = {selectedRow.ReservationId};
-                                                       UPDATE Room SET occupied = 0 WHERE room_id = {selectedRow.RoomId}", connect);
-                    
-                    connect.Open();
-                    command.ExecuteNonQuery();
-                    connect.Close();
-                }
+                    var selectedRow = dataGridReservation.SelectedRows[0].DataBoundItem as Reservation;
 
-                GenerateReservationTable();
+                    if (selectedRow.CurrentStatus != "Finished")
+                    {
+                        using (var connect = new SQLiteConnection(Program.ConnectionString))
+                        {
+                            var command = new SQLiteCommand($@"UPDATE Reservation SET current_status = 'Finished' WHERE reservation_id = {selectedRow.ReservationId};
+                                                       UPDATE Room SET occupied = 0 WHERE room_id = {selectedRow.RoomId}", connect);
+
+                            connect.Open();
+                            command.ExecuteNonQuery();
+                            connect.Close();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show($"This Reservation already finished");
+                    }
+
+
+                    
+                    GenerateReservationTable();
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show($"Error occured: {exception.Message} - {exception.Source}");
+                    throw;
+                }
             }
-            catch (Exception exception)
-            {
-                MessageBox.Show($"Error occured: {exception.Message} - {exception.Source}");
-                throw;
-            }
+
         }
 
         private void createButton_Click(object sender, EventArgs e)
