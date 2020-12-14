@@ -36,6 +36,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.deleteButton = new System.Windows.Forms.Button();
             this.finishButton = new System.Windows.Forms.Button();
+            this.refreshTableButton = new System.Windows.Forms.Button();
+            this.currentMonthLabel1 = new System.Windows.Forms.Label();
+            this.currentMonthLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridReservation)).BeginInit();
             this.SuspendLayout();
             // 
@@ -108,17 +111,49 @@
             // 
             this.finishButton.Location = new System.Drawing.Point(281, 66);
             this.finishButton.Name = "finishButton";
-            this.finishButton.Size = new System.Drawing.Size(75, 23);
+            this.finishButton.Size = new System.Drawing.Size(160, 23);
             this.finishButton.TabIndex = 9;
-            this.finishButton.Text = "Finish";
+            this.finishButton.Text = "Finish reservation";
             this.finishButton.UseVisualStyleBackColor = true;
             this.finishButton.Click += new System.EventHandler(this.finishButton_Click);
+            // 
+            // refreshTableButton
+            // 
+            this.refreshTableButton.Location = new System.Drawing.Point(281, 23);
+            this.refreshTableButton.Name = "refreshTableButton";
+            this.refreshTableButton.Size = new System.Drawing.Size(75, 23);
+            this.refreshTableButton.TabIndex = 10;
+            this.refreshTableButton.Text = "Refresh";
+            this.refreshTableButton.UseVisualStyleBackColor = true;
+            this.refreshTableButton.Click += new System.EventHandler(this.refreshTableButton_Click);
+            // 
+            // currentMonthLabel1
+            // 
+            this.currentMonthLabel1.AutoSize = true;
+            this.currentMonthLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.currentMonthLabel1.Location = new System.Drawing.Point(9, 478);
+            this.currentMonthLabel1.Name = "currentMonthLabel1";
+            this.currentMonthLabel1.Size = new System.Drawing.Size(296, 31);
+            this.currentMonthLabel1.TabIndex = 11;
+            this.currentMonthLabel1.Text = "Current month income: ";
+            // 
+            // currentMonthLabel
+            // 
+            this.currentMonthLabel.AutoSize = true;
+            this.currentMonthLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.currentMonthLabel.Location = new System.Drawing.Point(311, 478);
+            this.currentMonthLabel.Name = "currentMonthLabel";
+            this.currentMonthLabel.Size = new System.Drawing.Size(0, 31);
+            this.currentMonthLabel.TabIndex = 12;
             // 
             // ManageReservationsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1254, 518);
+            this.Controls.Add(this.currentMonthLabel);
+            this.Controls.Add(this.currentMonthLabel1);
+            this.Controls.Add(this.refreshTableButton);
             this.Controls.Add(this.finishButton);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.clientFullNameBox);
@@ -145,5 +180,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.Button finishButton;
+        private System.Windows.Forms.Button refreshTableButton;
+        private System.Windows.Forms.Label currentMonthLabel1;
+        private System.Windows.Forms.Label currentMonthLabel;
     }
 }

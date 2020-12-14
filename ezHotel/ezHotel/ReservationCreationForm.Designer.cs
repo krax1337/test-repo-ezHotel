@@ -37,21 +37,26 @@
             this.endDatePicker = new System.Windows.Forms.DateTimePicker();
             this.clientBox = new System.Windows.Forms.ComboBox();
             this.roomBox = new System.Windows.Forms.ComboBox();
+            this.nowStartButton = new System.Windows.Forms.Button();
+            this.oneDayEndDateButton = new System.Windows.Forms.Button();
+            this.threeDayEndDateButton = new System.Windows.Forms.Button();
+            this.sevenDayEndDateButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // submitButton
             // 
-            this.submitButton.Location = new System.Drawing.Point(60, 303);
+            this.submitButton.Location = new System.Drawing.Point(60, 351);
             this.submitButton.Name = "submitButton";
             this.submitButton.Size = new System.Drawing.Size(75, 23);
             this.submitButton.TabIndex = 25;
             this.submitButton.Text = "Create";
             this.submitButton.UseVisualStyleBackColor = true;
+            this.submitButton.Click += new System.EventHandler(this.submitButton_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(57, 249);
+            this.label4.Location = new System.Drawing.Point(57, 276);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(50, 13);
             this.label4.TabIndex = 19;
@@ -94,7 +99,7 @@
             // 
             // endDatePicker
             // 
-            this.endDatePicker.Location = new System.Drawing.Point(60, 265);
+            this.endDatePicker.Location = new System.Drawing.Point(60, 292);
             this.endDatePicker.Name = "endDatePicker";
             this.endDatePicker.Size = new System.Drawing.Size(390, 20);
             this.endDatePicker.TabIndex = 27;
@@ -115,11 +120,55 @@
             this.roomBox.Size = new System.Drawing.Size(390, 21);
             this.roomBox.TabIndex = 29;
             // 
+            // nowStartButton
+            // 
+            this.nowStartButton.Location = new System.Drawing.Point(60, 245);
+            this.nowStartButton.Name = "nowStartButton";
+            this.nowStartButton.Size = new System.Drawing.Size(75, 23);
+            this.nowStartButton.TabIndex = 30;
+            this.nowStartButton.Text = "Now";
+            this.nowStartButton.UseVisualStyleBackColor = true;
+            this.nowStartButton.Click += new System.EventHandler(this.nowStartButton_Click);
+            // 
+            // oneDayEndDateButton
+            // 
+            this.oneDayEndDateButton.Location = new System.Drawing.Point(60, 318);
+            this.oneDayEndDateButton.Name = "oneDayEndDateButton";
+            this.oneDayEndDateButton.Size = new System.Drawing.Size(75, 23);
+            this.oneDayEndDateButton.TabIndex = 31;
+            this.oneDayEndDateButton.Text = "1d";
+            this.oneDayEndDateButton.UseVisualStyleBackColor = true;
+            this.oneDayEndDateButton.Click += new System.EventHandler(this.oneDayEndDateButton_Click);
+            // 
+            // threeDayEndDateButton
+            // 
+            this.threeDayEndDateButton.Location = new System.Drawing.Point(141, 318);
+            this.threeDayEndDateButton.Name = "threeDayEndDateButton";
+            this.threeDayEndDateButton.Size = new System.Drawing.Size(75, 23);
+            this.threeDayEndDateButton.TabIndex = 32;
+            this.threeDayEndDateButton.Text = "3d";
+            this.threeDayEndDateButton.UseVisualStyleBackColor = true;
+            this.threeDayEndDateButton.Click += new System.EventHandler(this.threeDayEndDateButton_Click);
+            // 
+            // sevenDayEndDateButton
+            // 
+            this.sevenDayEndDateButton.Location = new System.Drawing.Point(222, 318);
+            this.sevenDayEndDateButton.Name = "sevenDayEndDateButton";
+            this.sevenDayEndDateButton.Size = new System.Drawing.Size(75, 23);
+            this.sevenDayEndDateButton.TabIndex = 33;
+            this.sevenDayEndDateButton.Text = "7d";
+            this.sevenDayEndDateButton.UseVisualStyleBackColor = true;
+            this.sevenDayEndDateButton.Click += new System.EventHandler(this.sevenDayEndDateButton_Click);
+            // 
             // ReservationCreationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(507, 347);
+            this.ClientSize = new System.Drawing.Size(507, 412);
+            this.Controls.Add(this.sevenDayEndDateButton);
+            this.Controls.Add(this.threeDayEndDateButton);
+            this.Controls.Add(this.oneDayEndDateButton);
+            this.Controls.Add(this.nowStartButton);
             this.Controls.Add(this.roomBox);
             this.Controls.Add(this.clientBox);
             this.Controls.Add(this.endDatePicker);
@@ -147,5 +196,9 @@
         private System.Windows.Forms.DateTimePicker endDatePicker;
         private System.Windows.Forms.ComboBox clientBox;
         private System.Windows.Forms.ComboBox roomBox;
+        private System.Windows.Forms.Button nowStartButton;
+        private System.Windows.Forms.Button oneDayEndDateButton;
+        private System.Windows.Forms.Button threeDayEndDateButton;
+        private System.Windows.Forms.Button sevenDayEndDateButton;
     }
 }

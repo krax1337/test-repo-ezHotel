@@ -15,6 +15,7 @@ namespace ezHotel
     {
         public void GenerateReservationTable()
         {
+            currentMonthLabel.Text = "";
             using (var connect = new SQLiteConnection(Program.ConnectionString))
             {
                 connect.Open();
@@ -53,14 +54,23 @@ namespace ezHotel
 
                 dataGridReservation.DataSource = reservations;
 
+                if (reservations.Count() > 0)
+                {
+                    currentMonthLabel.Text = reservations.Select(x => x.Amount).Sum().ToString();
+                }
+
                 connect.Close();
             }
+
+
         }
         public ManageReservationsForm()
         {
             InitializeComponent();
 
             GenerateReservationTable();
+
+
         }
 
         private void dataGridReservation_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -83,11 +93,12 @@ namespace ezHotel
             try
             {
                 var selectedRow = dataGridReservation.SelectedRows[0].DataBoundItem as Reservation;
-                var reservationPk = selectedRow.ReservationId;
+
 
                 using (var connect = new SQLiteConnection(Program.ConnectionString))
                 {
-                    var command = new SQLiteCommand($"DELETE FROM Reservation WHERE reservation_id = {reservationPk}", connect);
+                    var command = new SQLiteCommand($@"DELETE FROM Reservation WHERE reservation_id = {selectedRow.ReservationId};
+                                                    UPDATE Room SET occupied = 0 WHERE room_id = {selectedRow.RoomId}", connect);
                     connect.Open();
                     command.ExecuteNonQuery();
                     connect.Close();
@@ -131,6 +142,11 @@ namespace ezHotel
         {
             ReservationCreationForm reservationCreationForm = new ReservationCreationForm();
             reservationCreationForm.Show();
+        }
+
+        private void refreshTableButton_Click(object sender, EventArgs e)
+        {
+            GenerateReservationTable();
         }
     }
 }
