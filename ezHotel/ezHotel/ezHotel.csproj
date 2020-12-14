@@ -99,6 +99,12 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManageReservationsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageReservationsForm.Designer.cs">
+      <DependentUpon>ManageReservationsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManageRoomsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +114,13 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QueryHolder.cs" />
+    <Compile Include="Reservation.cs" />
+    <Compile Include="ReservationCreationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReservationCreationForm.Designer.cs">
+      <DependentUpon>ReservationCreationForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Room.cs" />
     <Compile Include="RoomCreationForm.cs">
       <SubType>Form</SubType>
@@ -124,6 +137,9 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ManageReservationsForm.resx">
+      <DependentUpon>ManageReservationsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ManageRoomsForm.resx">
       <DependentUpon>ManageRoomsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -136,6 +152,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ReservationCreationForm.resx">
+      <DependentUpon>ReservationCreationForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RoomCreationForm.resx">
       <DependentUpon>RoomCreationForm.cs</DependentUpon>
     </EmbeddedResource>

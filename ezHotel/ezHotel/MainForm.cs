@@ -15,6 +15,8 @@ namespace ezHotel
         public MainForm()
         {
             InitializeComponent();
+
+            timer1.Start();
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -42,13 +44,24 @@ namespace ezHotel
 
         private void manageReservationsButton_Click(object sender, EventArgs e)
         {
-
+            ManageReservationsForm manageReservationsForm = new ManageReservationsForm();
+            manageReservationsForm.Show();
         }
 
         private void manageRoomsButton_Click(object sender, EventArgs e)
         {
             ManageRoomsForm manageRoomsForm = new ManageRoomsForm();
             manageRoomsForm.Show();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            timeLabel.Text = "Current time is: " + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
         }
     }
 }

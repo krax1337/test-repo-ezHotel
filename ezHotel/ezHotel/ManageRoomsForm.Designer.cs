@@ -108,6 +108,7 @@
             // checkBoxOccupied
             // 
             this.checkBoxOccupied.AutoSize = true;
+            this.checkBoxOccupied.Enabled = false;
             this.checkBoxOccupied.Location = new System.Drawing.Point(122, 76);
             this.checkBoxOccupied.Name = "checkBoxOccupied";
             this.checkBoxOccupied.Size = new System.Drawing.Size(72, 17);
@@ -127,6 +128,7 @@
             // 
             // updateButton
             // 
+            this.updateButton.Enabled = false;
             this.updateButton.Location = new System.Drawing.Point(267, 74);
             this.updateButton.Name = "updateButton";
             this.updateButton.Size = new System.Drawing.Size(75, 20);

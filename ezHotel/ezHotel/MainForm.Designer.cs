@@ -28,9 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.manageClientsButton = new System.Windows.Forms.Button();
             this.manageReservationsButton = new System.Windows.Forms.Button();
             this.manageRoomsButton = new System.Windows.Forms.Button();
+            this.timeLabel = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // manageClientsButton
@@ -63,9 +66,23 @@
             this.manageRoomsButton.UseVisualStyleBackColor = true;
             this.manageRoomsButton.Click += new System.EventHandler(this.manageRoomsButton_Click);
             // 
+            // timeLabel
+            // 
+            this.timeLabel.AutoSize = true;
+            this.timeLabel.Location = new System.Drawing.Point(12, 13);
+            this.timeLabel.Name = "timeLabel";
+            this.timeLabel.Size = new System.Drawing.Size(0, 13);
+            this.timeLabel.TabIndex = 3;
+            this.timeLabel.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // MainForm
             // 
             this.ClientSize = new System.Drawing.Size(284, 284);
+            this.Controls.Add(this.timeLabel);
             this.Controls.Add(this.manageRoomsButton);
             this.Controls.Add(this.manageReservationsButton);
             this.Controls.Add(this.manageClientsButton);
@@ -73,6 +90,7 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -81,5 +99,7 @@
         private System.Windows.Forms.Button manageClientsButton;
         private System.Windows.Forms.Button manageReservationsButton;
         private System.Windows.Forms.Button manageRoomsButton;
+        private System.Windows.Forms.Label timeLabel;
+        private System.Windows.Forms.Timer timer1;
     }
 }
