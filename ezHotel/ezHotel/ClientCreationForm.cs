@@ -16,6 +16,8 @@ namespace ezHotel
         public ClientCreationForm()
         {
             InitializeComponent();
+
+            Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
         }
 
         private void label1_Click(object sender, EventArgs e)

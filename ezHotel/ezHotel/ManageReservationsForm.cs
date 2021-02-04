@@ -70,7 +70,7 @@ namespace ezHotel
 
             GenerateReservationTable();
 
-
+            Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
         }
 
         private void dataGridReservation_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

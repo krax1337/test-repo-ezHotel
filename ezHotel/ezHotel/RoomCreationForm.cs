@@ -28,6 +28,8 @@ namespace ezHotel
             InitializeComponent();
 
             comboBoxRoomType.DataSource = roomType.Keys.ToList();
+
+            Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
         }
 
         private void submitButton_Click(object sender, EventArgs e)

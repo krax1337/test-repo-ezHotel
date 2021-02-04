@@ -20,6 +20,7 @@ namespace ezHotel
         public ReservationCreationForm()
         {
             InitializeComponent();
+            Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 
             startDatePicker.Format = DateTimePickerFormat.Custom;
             startDatePicker.CustomFormat = "dd/MM/yyyy HH:mm";

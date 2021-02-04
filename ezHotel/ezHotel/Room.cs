@@ -15,7 +15,6 @@ namespace ezHotel
         public int NumberOfBeds { get; set; }
         public int Price { get; set; }
 
-
         public Room(int roomId, int floor, bool occupied, string roomType, int numberOfBeds, int price)
         {
             RoomId = roomId;

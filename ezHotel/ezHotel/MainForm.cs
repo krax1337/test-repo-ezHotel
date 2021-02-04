@@ -17,6 +17,8 @@ namespace ezHotel
             InitializeComponent();
 
             timer1.Start();
+
+            Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)

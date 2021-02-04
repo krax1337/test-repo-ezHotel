@@ -58,6 +58,8 @@ namespace ezHotel
             InitializeComponent();
 
             GenerateClientTable();
+
+            Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
         }
 
         private void deleteButton_Click(object sender, EventArgs e)

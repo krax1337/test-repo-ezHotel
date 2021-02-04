@@ -18,6 +18,8 @@ namespace ezHotel
             InitializeComponent();
 
             GenerateRoomTable();
+
+            Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
         }
 
         public void GenerateRoomTable()
