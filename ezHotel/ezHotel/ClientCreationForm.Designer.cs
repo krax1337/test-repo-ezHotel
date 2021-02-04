@@ -168,8 +168,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.firstNameText);
             this.Controls.Add(this.label1);
+            this.MaximumSize = new System.Drawing.Size(433, 508);
+            this.MinimumSize = new System.Drawing.Size(433, 508);
             this.Name = "ClientCreationForm";
-            this.Text = "ClientCreationForm";
+            this.Text = "Create a Client";
             this.ResumeLayout(false);
             this.PerformLayout();
 

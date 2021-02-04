@@ -99,8 +99,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.submitButton);
             this.Controls.Add(this.label1);
+            this.MaximumSize = new System.Drawing.Size(474, 254);
+            this.MinimumSize = new System.Drawing.Size(474, 254);
             this.Name = "RoomCreationForm";
-            this.Text = "RoomCreationForm";
+            this.Text = "Create a Room";
             ((System.ComponentModel.ISupportInitialize)(this.numericFloor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

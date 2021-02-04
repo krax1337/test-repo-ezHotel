@@ -162,8 +162,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.createButton);
             this.Controls.Add(this.dataGridReservation);
+            this.MaximumSize = new System.Drawing.Size(1270, 557);
+            this.MinimumSize = new System.Drawing.Size(1270, 557);
             this.Name = "ManageReservationsForm";
-            this.Text = "ManageReservationsForm";
+            this.Text = "Manage Reservations";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridReservation)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

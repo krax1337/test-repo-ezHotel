@@ -38,6 +38,7 @@
             // 
             // manageClientsButton
             // 
+            this.manageClientsButton.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.manageClientsButton.Location = new System.Drawing.Point(12, 55);
             this.manageClientsButton.Name = "manageClientsButton";
             this.manageClientsButton.Size = new System.Drawing.Size(260, 70);
@@ -48,6 +49,7 @@
             // 
             // manageReservationsButton
             // 
+            this.manageReservationsButton.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.manageReservationsButton.Location = new System.Drawing.Point(12, 131);
             this.manageReservationsButton.Name = "manageReservationsButton";
             this.manageReservationsButton.Size = new System.Drawing.Size(260, 70);
@@ -58,6 +60,7 @@
             // 
             // manageRoomsButton
             // 
+            this.manageRoomsButton.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.manageRoomsButton.Location = new System.Drawing.Point(12, 207);
             this.manageRoomsButton.Name = "manageRoomsButton";
             this.manageRoomsButton.Size = new System.Drawing.Size(260, 70);
@@ -69,9 +72,10 @@
             // timeLabel
             // 
             this.timeLabel.AutoSize = true;
-            this.timeLabel.Location = new System.Drawing.Point(12, 13);
+            this.timeLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timeLabel.Location = new System.Drawing.Point(5, 13);
             this.timeLabel.Name = "timeLabel";
-            this.timeLabel.Size = new System.Drawing.Size(0, 13);
+            this.timeLabel.Size = new System.Drawing.Size(0, 21);
             this.timeLabel.TabIndex = 3;
             // 
             // timer1
@@ -85,7 +89,10 @@
             this.Controls.Add(this.manageRoomsButton);
             this.Controls.Add(this.manageReservationsButton);
             this.Controls.Add(this.manageClientsButton);
+            this.MaximumSize = new System.Drawing.Size(300, 323);
+            this.MinimumSize = new System.Drawing.Size(300, 323);
             this.Name = "MainForm";
+            this.Text = "Dashboard";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();

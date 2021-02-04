@@ -174,8 +174,10 @@
             this.Controls.Add(this.textRoomId);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridRoom);
+            this.MaximumSize = new System.Drawing.Size(828, 506);
+            this.MinimumSize = new System.Drawing.Size(828, 506);
             this.Name = "ManageRoomsForm";
-            this.Text = "ManageRoomsForm";
+            this.Text = "Manage Rooms";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridRoom)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

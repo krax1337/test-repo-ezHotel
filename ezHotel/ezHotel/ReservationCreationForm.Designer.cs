@@ -178,8 +178,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.MaximumSize = new System.Drawing.Size(523, 451);
+            this.MinimumSize = new System.Drawing.Size(523, 451);
             this.Name = "ReservationCreationForm";
-            this.Text = "ReservationCreationForm";
+            this.Text = "Create a Reservation";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -217,8 +217,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.firstNameText);
             this.Controls.Add(this.dataGridClient);
+            this.MaximumSize = new System.Drawing.Size(822, 559);
+            this.MinimumSize = new System.Drawing.Size(822, 559);
             this.Name = "ManageClientsForm";
-            this.Text = "v";
+            this.Text = "Manage Clients";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridClient)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
