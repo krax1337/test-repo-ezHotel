@@ -20,6 +20,7 @@ namespace ezHotel
         public ReservationCreationForm()
         {
             InitializeComponent();
+            endDatePicker.Value = DateTime.Now.AddDays(1);
             Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 
             startDatePicker.Format = DateTimePickerFormat.Custom;

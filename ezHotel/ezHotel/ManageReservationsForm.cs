@@ -157,8 +157,11 @@ namespace ezHotel
 
         private void createButton_Click(object sender, EventArgs e)
         {
-            ReservationCreationForm reservationCreationForm = new ReservationCreationForm();
-            reservationCreationForm.Show();
+            Hide();
+            using (ReservationCreationForm reservationCreationForm = new ReservationCreationForm())
+                reservationCreationForm.ShowDialog();
+            Show();
+            GenerateReservationTable();
         }
 
         private void refreshTableButton_Click(object sender, EventArgs e)

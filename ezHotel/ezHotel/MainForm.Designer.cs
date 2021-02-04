@@ -73,7 +73,6 @@
             this.timeLabel.Name = "timeLabel";
             this.timeLabel.Size = new System.Drawing.Size(0, 13);
             this.timeLabel.TabIndex = 3;
-            this.timeLabel.Click += new System.EventHandler(this.label1_Click);
             // 
             // timer1
             // 
@@ -88,7 +87,6 @@
             this.Controls.Add(this.manageClientsButton);
             this.Name = "MainForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
-            this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

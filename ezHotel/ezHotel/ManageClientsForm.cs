@@ -13,7 +13,6 @@ namespace ezHotel
 {
     public partial class ManageClientsForm : Form
     {
-
         public void GenerateClientTable()
         {
             using (var connect = new SQLiteConnection(Program.ConnectionString))
@@ -87,13 +86,12 @@ namespace ezHotel
                     throw;
                 }
             }
-
-
         }
 
         private void updateButton_Click(object sender, EventArgs e)
         {
-            if (dataGridClient.RowCount > 0)
+            if (dataGridClient.RowCount > 0 && firstNameText.TextLength > 0 && lastNameText.TextLength > 0 && phoneText.TextLength > 0 
+                && passportNumberText.TextLength > 0 && emailText.TextLength > 0 && countryText.TextLength > 0)
             {
                 try
                 {
@@ -116,17 +114,17 @@ namespace ezHotel
                     throw;
                 }
             }
-
         }
 
         private void createButton_Click(object sender, EventArgs e)
         {
-
-            var clientCreationForm = new ClientCreationForm();
-            clientCreationForm.Show();
-
             // question about event
-
+            // fixed but still wondering
+            Hide();
+            using (ClientCreationForm clientCreationForm = new ClientCreationForm())
+                clientCreationForm.ShowDialog();
+            Show();
+            GenerateClientTable();
         }
 
         private void tableUpdateButton_Click(object sender, EventArgs e)
@@ -134,7 +132,7 @@ namespace ezHotel
             GenerateClientTable();
         }
 
-        private void dataGridClient_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridClient_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {

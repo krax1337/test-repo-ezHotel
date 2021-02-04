@@ -32,33 +32,26 @@ namespace ezHotel
 
         private void manageClientsButton_Click(object sender, EventArgs e)
         {
-            // Possible memory leak with hiding main tweak
-            //Show(ManageClientsForm());
-            ManageClientsForm manageClientsForm = new ManageClientsForm();
-            manageClientsForm.Show();
-            //Hide();
-        }
-
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-
+            Hide();
+            using (ManageClientsForm manageClientsForm = new ManageClientsForm())
+                manageClientsForm.ShowDialog();
+            Show();
         }
 
         private void manageReservationsButton_Click(object sender, EventArgs e)
         {
-            ManageReservationsForm manageReservationsForm = new ManageReservationsForm();
-            manageReservationsForm.Show();
+            Hide();
+            using (ManageReservationsForm manageReservationsForm = new ManageReservationsForm())
+                manageReservationsForm.ShowDialog();
+            Show();
         }
 
         private void manageRoomsButton_Click(object sender, EventArgs e)
         {
-            ManageRoomsForm manageRoomsForm = new ManageRoomsForm();
-            manageRoomsForm.Show();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+            Hide();
+            using (ManageRoomsForm manageRoomsForm = new ManageRoomsForm())
+                manageRoomsForm.ShowDialog();
+            Show();
         }
 
         private void timer1_Tick(object sender, EventArgs e)

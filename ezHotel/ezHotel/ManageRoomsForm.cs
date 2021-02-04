@@ -128,8 +128,11 @@ namespace ezHotel
 
         private void createButton_Click(object sender, EventArgs e)
         {
-            var roomCreationForm = new RoomCreationForm();
-            roomCreationForm.Show();
+            Hide();
+            using (RoomCreationForm roomCreationForm = new RoomCreationForm())
+                roomCreationForm.ShowDialog();
+            Show();
+            GenerateRoomTable();
         }
 
         private void refreshButton_Click(object sender, EventArgs e)
