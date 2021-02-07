@@ -1,14 +1,14 @@
-#  :tada: ezHotel  :tada: 
+# :tada: ezHotel :tada: 
 ## *Documentation work in progress*
 ## WinForms CRM for Hotels
 This application has been created by Asanali Bulatov (`w62890`) and Yasmin Kisskova (`w62831`)
 
-- [:tada: ezHotel  :tada:](#tada-ezhotel--tada)
+- [:tada: ezHotel :tada:](#tada-ezhotel-tada)
   - [*Documentation work in progress*](#documentation-work-in-progress)
   - [WinForms CRM for Hotels](#winforms-crm-for-hotels)
 - [Purpose of the app](#purpose-of-the-app)
 - [ER - Diagram](#er---diagram)
-- [*Disclaimer*](#disclaimer)
+- [Disclaimer](#disclaimer)
 - [Screenshots](#screenshots)
 - [Initial SQL script](#initial-sql-script)
 - [How to use?](#how-to-use)
@@ -23,7 +23,7 @@ This application has been created by Asanali Bulatov (`w62890`) and Yasmin Kissk
 # ER - Diagram
 ![ER-diagram](./markDownFiles/ezHotel.png)
 
-# *Disclaimer*
+# Disclaimer
 This project was created as part of *Programming Languages* course.
 
 # Screenshots 
