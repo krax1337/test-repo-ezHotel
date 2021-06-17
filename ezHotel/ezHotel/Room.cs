@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ezHotel
 {
-    class Room
+    public class Room
     {
         public int RoomId { get; set; }
         public int Floor { get; set; }
