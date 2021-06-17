@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SQLite;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ezHotel
@@ -28,7 +22,7 @@ namespace ezHotel
         private void submitButton_Click(object sender, EventArgs e)
         {
             if (firstNameText.Text == "" || lastNameText.Text == ""
-                || phoneText.Text == "" || emailText.Text == "" 
+                || phoneText.Text == "" || emailText.Text == ""
                 || countryText.Text == "" || passportNumberText.Text == "")
             {
                 MessageBox.Show($"Please complete the form");

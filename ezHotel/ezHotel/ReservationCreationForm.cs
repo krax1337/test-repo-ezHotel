@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ezHotel
@@ -35,7 +31,7 @@ namespace ezHotel
                 var sqlCommand = new SQLiteCommand(@"select client_id, 'ID - ' || client_id || ' ' || 
                                                 first_name || ' ' || last_name as 'client_string' from Client;", connect);
                 var sqlReader = sqlCommand.ExecuteReader();
-                
+
 
                 if (sqlReader.HasRows)
                 {
@@ -160,7 +156,7 @@ namespace ezHotel
                 MessageBox.Show($"Error occured: {exception.Message} - {exception.Source}");
                 throw;
             }
-            
+
         }
     }
 }

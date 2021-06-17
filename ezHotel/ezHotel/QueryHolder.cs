@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ezHotel
+﻿namespace ezHotel
 {
-    class QueryHolder
+    public class QueryHolder
     {
         public static string InitQuery = @"
         CREATE TABLE Client (

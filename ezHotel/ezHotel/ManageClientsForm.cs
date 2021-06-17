@@ -1,13 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.SQLite;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace ezHotel
 {
@@ -90,7 +85,7 @@ namespace ezHotel
 
         private void updateButton_Click(object sender, EventArgs e)
         {
-            if (dataGridClient.RowCount > 0 && firstNameText.TextLength > 0 && lastNameText.TextLength > 0 && phoneText.TextLength > 0 
+            if (dataGridClient.RowCount > 0 && firstNameText.TextLength > 0 && lastNameText.TextLength > 0 && phoneText.TextLength > 0
                 && passportNumberText.TextLength > 0 && emailText.TextLength > 0 && countryText.TextLength > 0)
             {
                 try
