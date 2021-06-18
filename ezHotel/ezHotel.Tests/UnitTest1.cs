@@ -1,10 +1,11 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using ezHotel;
 
 namespace ezHotel.Tests
 {
     [TestClass]
-    public class Main
+    public class UnitTest1
     {
         [TestMethod]
         public void TestRoom()
