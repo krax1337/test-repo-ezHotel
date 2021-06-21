@@ -3,12 +3,23 @@
 ## WinForms CRM for Hotels
 This application has been created by Asanali Bulatov (`w62890`) and Yasmin Kisskova (`w62831`)
 
+## Disclaimer
+This project was created as part of *Programming Languages* and *Software Engineering* courses.
+
+## Table of Contents
 - [:tada: ezHotel :tada:](#tada-ezhotel-tada)
   - [*Documentation work in progress*](#documentation-work-in-progress)
   - [WinForms CRM for Hotels](#winforms-crm-for-hotels)
+  - [Disclaimer](#disclaimer)
+  - [Table of Contents](#table-of-contents)
 - [Purpose of the app](#purpose-of-the-app)
-- [ER - Diagram](#er---diagram)
-- [Disclaimer](#disclaimer)
+- [Use case descriptions](#use-case-descriptions)
+- [Diagrams](#diagrams)
+  - [ER - Diagram](#er---diagram)
+  - [Use case diagrams](#use-case-diagrams)
+  - [State machine diagrams](#state-machine-diagrams)
+  - [Activity diagrams](#activity-diagrams)
+  - [UML diagrams](#uml-diagrams)
 - [Screenshots](#screenshots)
 - [Initial SQL script](#initial-sql-script)
 - [How to use?](#how-to-use)
@@ -20,11 +31,28 @@ This application has been created by Asanali Bulatov (`w62890`) and Yasmin Kissk
 * Compact SQLite database
 * Open source and accessibility for everyone
 
-# ER - Diagram
+# Use case descriptions
+[Use cases descriptions](./docs/usecases.md)
+
+# Diagrams
+## ER - Diagram
 ![ER-diagram](./markDownFiles/ezHotel.png)
 
-# Disclaimer
-This project was created as part of *Programming Languages* course.
+## Use case diagrams
+![ER-diagram](./markDownFiles/use_case_diagram1.png)
+
+![ER-diagram](./markDownFiles/use_case_diagram2.png)
+
+![ER-diagram](./markDownFiles/Screenshot%202021-06-21-usecase.png)
+
+## State machine diagrams
+![ER-diagram](./markDownFiles/Screenshot%202021-06-21-state.png)
+
+## Activity diagrams
+![ER-diagram](./markDownFiles/activity_diagram.png)
+
+## UML diagrams
+![ER-diagram](./markDownFiles/Classdiagram1.png)
 
 # Screenshots 
 ![Dashboard](./markDownFiles/dashboard.png)
